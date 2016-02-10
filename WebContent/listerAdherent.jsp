@@ -1,23 +1,23 @@
 <%@include file="include/header.jsp" %>
 	
-<h2>Listing des Adhérents</h2>
+<h2>Listes des Adhérents</h2>
 
-<TABLE BORDER="1" class="table table-striped table-bordered">
-	<CAPTION>Tableau des Adhérents</CAPTION>
-	<TR>
-		<TH>Numero</TH>
-		<TH>Nom</TH>
-		<TH>Prénom</TH>
-		<TH>Ville</TH>
+<table BORDER="1" class="table table-striped table-bordered">
+	<caption>Tableau des Adhérents</caption>
+	<tr>
+		<th>Numero</th>
+		<th>Nom</th>
+		<th>Prénom</th>
+		<th>Ville</th>
 
-	</TR>
+	</tr>
 
 	<c:forEach items="${mesAdherents}" var="item">
 		<tr>
 			<td>${item.idAdherent}</td>
 			<td>${item.nomAdherent}</td>
 			<td>${item.prenomAdherent}</td>
-               <td>${item.villeAdherent}</td>
+            <td>${item.villeAdherent}</td>
 		</tr>
 	</c:forEach>
 </TABLE>
