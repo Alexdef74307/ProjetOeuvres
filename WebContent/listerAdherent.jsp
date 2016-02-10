@@ -1,41 +1,27 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Affichage de tous les adhÃ©rents</title>
-</head>
-<body>
-	<P>
-		<A href="index.jsp"><FONT face="Arial" color="#004080">Retour
-				Accueil</FONT></A>
-	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					AdhÃ©rents </STRONG></U></FONT>
-	</P>
+<%@include file="include/header.jsp" %>
+	
+<h2>Listing des Adhérents</h2>
 
-	<TABLE BORDER="1">
-		<CAPTION>Tableau des AdhÃ©rents</CAPTION>
-		<TR>
-			<TH>Numero</TH>
-			<TH>Nom</TH>
-			<TH>PrÃ©nom</TH>
-			<TH>Ville</TH>
+<TABLE BORDER="1" class="table table-striped table-bordered">
+	<CAPTION>Tableau des Adhérents</CAPTION>
+	<TR>
+		<TH>Numero</TH>
+		<TH>Nom</TH>
+		<TH>Prénom</TH>
+		<TH>Ville</TH>
 
-		</TR>
+	</TR>
 
-		<c:forEach items="${mesAdherents}" var="item">
-			<tr>
-				<td>${item.idAdherent}</td>
-				<td>${item.nomAdherent}</td>
-				<td>${item.prenomAdherent}</td>
-                <td>${item.villeAdherent}</td>
-			</tr>
-		</c:forEach>
-	</TABLE>
-</body>
-</html>
+	<c:forEach items="${mesAdherents}" var="item">
+		<tr>
+			<td>${item.idAdherent}</td>
+			<td>${item.nomAdherent}</td>
+			<td>${item.prenomAdherent}</td>
+               <td>${item.villeAdherent}</td>
+		</tr>
+	</c:forEach>
+</TABLE>
+
+<a class="btn btn-default" href="index.jsp"><FONT face="Arial" color="#004080">Retour Accueil</FONT></a>
+
+<%@ include file="include/footer.jsp" %>
