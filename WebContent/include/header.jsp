@@ -51,10 +51,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="adherents?action=listerAdherent">Liste</a>
+                                    <a href="Controleur?action=listerAdherent">Liste</a>
                                 </li>
                                 <li>
-                                    <a href="adherents?action=ajouterAdherent">Ajout</a>
+                                    <a href="Controleur?action=ajouterAdherent">Ajout</a>
                                 </li>
                             </ul>
                         </li>
