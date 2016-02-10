@@ -50,6 +50,7 @@ public class ServiceAdherent {
 	}
 
 	private List<Adherent> consulterListeAdherents(String mysql) throws MonException {
+		
 		List<Object> rs;
 		List<Adherent> mesAdherents = new ArrayList<Adherent>();
 		int index = 0;
