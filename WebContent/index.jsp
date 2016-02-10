@@ -4,7 +4,7 @@
 
 <h3>Sélectionnez la fonctionnalité voulue: </h3>
 
-<ul>
+<ul class="list-unstyled">
 	<li><a href="Controleur?action=ajouterAdherent"><font
 			face="Arial">Ajout Adhérent</font></a></li>
 	<li><a href="Controleur?action=listerAdherent"><font
