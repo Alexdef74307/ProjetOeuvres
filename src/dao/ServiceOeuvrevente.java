@@ -13,7 +13,7 @@ public class ServiceOeuvrevente {
 	
 	
 
-private List<Oeuvrevente> consulterListeOeuvresventes(String mysql) throws MonException {
+public List<Oeuvrevente> consulterListeOeuvresventes() throws MonException {
 	String mySql = "select * from oeuvrevente"; 	
 	List<Object> rs;
 	List<Oeuvrevente> mesOeuvrevente = new ArrayList<Oeuvrevente>();
@@ -22,17 +22,17 @@ private List<Oeuvrevente> consulterListeOeuvresventes(String mysql) throws MonEx
 		DialogueBd unDialogueBd = DialogueBd.getInstance();
 		rs = DialogueBd.lecture(mySql);
 		ServiceProprietaire unServiceProprietaire = new ServiceProprietaire();
+		String idProprietaire;
 		while (index < rs.size()) {
-			Oeuvrevente uneOeuvrevente = new Oeuvrevente();
-			
-			/*unA.setIdAdherent(Integer.parseInt(rs.get(index + 0).toString()));
-			unA.setNomAdherent(rs.get(index + 1).toString());
-			unA.setPrenomAdherent(rs.get(index + 2).toString());
-			unA.setVilleAdherent(rs.get(index + 3).toString());*/
-			unServiceProprietaire.getProprietaire();
-			// On incrémente tous les 3 champs
+			Oeuvrevente uneOeuvreVente = new Oeuvrevente();
+			uneOeuvreVente.setIdOeuvrevente(Integer.parseInt(rs.get(+0).toString()));
+			uneOeuvreVente.setTitreOeuvrevente(rs.get(index+1).toString());
+			uneOeuvreVente.setEtatOeuvrevente(rs.get(index + 2).toString());
+			uneOeuvreVente.setPrixOeuvrevente(Float.parseFloat(rs.get(index+3).toString()));
+			idProprietaire = rs.get(index+4).toString();
+			uneOeuvreVente.setProprietaire(unServiceProprietaire.getProprietaire(idProprietaire)); 
 			index = index + 5;
-			mesOeuvrevente.add(uneOeuvrevente);
+			mesOeuvrevente.add(uneOeuvreVente);
 		}
 
 		return mesOeuvrevente;

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import metier.*;
-import dao.ServiceAdherent;
+import dao.*;
 import meserreurs.*;
 
 /**
@@ -28,7 +28,7 @@ public class Controleur extends HttpServlet {
 	private static final String insererAdherent = "insererAdherent";
 	private static final String modifierAdherent = "modifierAdherent";
 	private static final String supprimerAdherent = "supprimerAdherent";
-	private static final String listerOeuvre = "listerOeuvre";
+	private static final String listerOeuvreVente = "listerOeuvreVente";
 	private static final String reserverOeuvre = "reserverOeuvre";
 	private static final String modifierOeuvre = "modifierOeuvre";
 	private static final String supprimerOeuvre = "supprimerOeuvre";
@@ -81,6 +81,7 @@ public class Controleur extends HttpServlet {
 		String actionName = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		ServiceAdherent unServiceAdherent;
+		ServiceOeuvrevente unServiceOeuvrevente;
 		// execute l'action
 		switch(actionName){
 		
@@ -121,11 +122,14 @@ public class Controleur extends HttpServlet {
 				
 				break;
 				
-			case listerOeuvre :
+			case listerOeuvreVente :
 				
-				// To be completed
-				
+				unServiceOeuvrevente = new ServiceOeuvrevente();
+				request.setAttribute("mesOeuvrevente", unServiceOeuvrevente.consulterListeOeuvresventes());
+				destinationPage = "/listerOeuvrevente.jsp";
 				break;
+				
+			
 				
 			case reserverOeuvre : 
 				
