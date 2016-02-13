@@ -17,7 +17,15 @@
 			<td>${item.idAdherent}</td>
 			<td>${item.nomAdherent}</td>
 			<td>${item.prenomAdherent}</td>
-            <td>${item.villeAdherent}</td>
+            <td>${item.villeAdherent}</td>            
+            <td>
+            	<button type ="button" class = "btn-primary btn-xs">
+            		Edit            	
+            	</button>
+            	<button type ="button" class = "btn-danger btn-xs"> 
+            		Delete
+            	</button>
+             </td>
 		</tr>
 	</c:forEach>
 </TABLE>
