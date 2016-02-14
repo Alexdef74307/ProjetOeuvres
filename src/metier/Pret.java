@@ -13,11 +13,11 @@ public class Pret implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Date date;
 	private int duree;
-	private Oeuvrepret oeuvrepret;
+	private OeuvrePret oeuvrepret;
 	private Adherent adherent;
 
 	
-	public Pret( Date date, int duree, Oeuvrepret oeuvrepret, Adherent adherent) {
+	public Pret( Date date, int duree, OeuvrePret oeuvrepret, Adherent adherent) {
 		super();
 		this.date = date;
 		this.duree = duree;
@@ -45,11 +45,11 @@ public class Pret implements Serializable {
 		this.duree = duree;
 	}
 
-	public Oeuvrepret getOeuvrepret() {
+	public OeuvrePret getOeuvrepret() {
 		return this.oeuvrepret;
 	}
 
-	public void setOeuvrepret(Oeuvrepret oeuvrepret) {
+	public void setOeuvrepret(OeuvrePret oeuvrepret) {
 		this.oeuvrepret = oeuvrepret;
 	}
 

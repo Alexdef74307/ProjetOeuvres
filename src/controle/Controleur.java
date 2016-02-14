@@ -16,7 +16,7 @@ import meserreurs.*;
 
 /**
  * Servlet implementation class Controleur
- */
+ */ 
 @WebServlet("/Controleur")
 public class Controleur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,9 +29,10 @@ public class Controleur extends HttpServlet {
 	private static final String modifierAdherent = "modifierAdherent";
 	private static final String supprimerAdherent = "supprimerAdherent";
 	private static final String listerOeuvreVente = "listerOeuvreVente";
+	private static final String listerOeuvrePret = "listerOeuvrePret";
 	private static final String reserverOeuvre = "reserverOeuvre";
 	private static final String modifierOeuvre = "modifierOeuvre";
-	private static final String supprimerOeuvre = "supprimerOeuvre";
+	private static final String supprimerOeuvreVente = "supprimerOeuvreVente";
 	
 	
 	//
@@ -78,22 +79,16 @@ public class Controleur extends HttpServlet {
 
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, MonException {
+		String idAdherent;
+		String idOeuvreVente;
 		String action = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
-		String actionName;
-		String actionId;
-		if(action.matches(".*\\d.*")){
-		    String[] parts = action.split("/");
-		    actionName	= parts[0];
-		    actionId = parts[1];
-		}else{
-			actionName = action;
-			actionId = "-1";
-		}
 		ServiceAdherent unServiceAdherent;
-		ServiceOeuvrevente unServiceOeuvrevente;
+		ServiceOeuvreVente unServiceOeuvreVente;
+		ServiceOeuvrePret unServiceOeuvrePret;
 		// execute l'action
-		switch(actionName){
+		System.out.println(action);
+		switch(action){
 		
 			case listerAdherent :
 				
@@ -129,7 +124,8 @@ public class Controleur extends HttpServlet {
 			case supprimerAdherent : 
 				
 				unServiceAdherent = new ServiceAdherent();
-				unServiceAdherent.supprimerAdherent(actionId);
+				idAdherent = request.getParameter("idAdherent");
+				unServiceAdherent.supprimerAdherent(idAdherent);
 				request.setAttribute("mesAdherents", unServiceAdherent.consulterListeAdherents());
 				destinationPage = "/listerAdherent.jsp";
 				
@@ -137,11 +133,17 @@ public class Controleur extends HttpServlet {
 				
 			case listerOeuvreVente :
 				
-				unServiceOeuvrevente = new ServiceOeuvrevente();
-				request.setAttribute("mesOeuvrevente", unServiceOeuvrevente.consulterListeOeuvresventes());
-				destinationPage = "/listerOeuvrevente.jsp";
+				unServiceOeuvreVente = new ServiceOeuvreVente();
+				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
+				destinationPage = "/listerOeuvreVente.jsp";
 				break;
 				
+			case listerOeuvrePret :
+				
+				unServiceOeuvrePret = new ServiceOeuvrePret();
+				request.setAttribute("mesOeuvrePret", unServiceOeuvrePret.consulterListeOeuvresPrets());
+				destinationPage = "/listerOeuvrePret.jsp";
+				break;
 			
 				
 			case reserverOeuvre : 
@@ -156,15 +158,19 @@ public class Controleur extends HttpServlet {
 				
 				break;
 				
-			case supprimerOeuvre : 
+			case supprimerOeuvreVente : 
 				
 				// To be completed
-				
+				unServiceOeuvreVente = new ServiceOeuvreVente();
+				idOeuvreVente = request.getParameter("idOeuvreVente");
+				unServiceOeuvreVente.supprimerOeuvreVente(idOeuvreVente);
+				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
+				destinationPage = "/listerOeuvreVente.jsp";
 				break;
 				
 			default : 
 				
-				String messageErreur = "[" + actionName + "] n'est pas une action valide.";
+				String messageErreur = "[" + action + "] n'est pas une action valide.";
 				request.setAttribute(ERROR_KEY, messageErreur);
 		}
 		

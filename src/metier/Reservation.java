@@ -14,14 +14,14 @@ public class Reservation implements Serializable {
 	
 	private Date date;
 	private Adherent adherent;
-	private Oeuvrevente oeuvrevente;
+	private OeuvreVente oeuvrevente;
 
 	public Reservation() {
 	}
 
 
 
-	public Reservation(Date date, Adherent adherent, Oeuvrevente oeuvrevente) {
+	public Reservation(Date date, Adherent adherent, OeuvreVente oeuvrevente) {
 		super();
 		this.date = date;
 		this.adherent = adherent;
@@ -46,11 +46,11 @@ public class Reservation implements Serializable {
 		this.adherent = adherent;
 	}
 
-	public Oeuvrevente getOeuvrevente() {
+	public OeuvreVente getOeuvrevente() {
 		return this.oeuvrevente;
 	}
 
-	public void setOeuvrevente(Oeuvrevente oeuvrevente) {
+	public void setOeuvrevente(OeuvreVente oeuvrevente) {
 		this.oeuvrevente = oeuvrevente;
 	}
 

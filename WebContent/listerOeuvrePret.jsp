@@ -1,28 +1,26 @@
 <%@include file="include/header.jsp" %>
-	
-<h2>Listes des Adhérents</h2>
+
+<h2>Listes des Oeuvres en Pret</h2>
 
 <table BORDER="1" class="table table-striped table-bordered">
-	<caption>Tableau des Adhérents</caption>
+	<caption>Tableau des Oeuvre en pret</caption>
 	<tr>
 		<th>Numero</th>
-		<th>Nom</th>
-		<th>Prénom</th>
-		<th>Ville</th>
+		<th>Titre</th>
+		<th>Proprietaire</th>
 
 	</tr>
 
-	<c:forEach items="${mesAdherents}" var="item">
+	<c:forEach items="${mesOeuvrePret}" var="item">
 		<tr>
-			<td>${item.idAdherent}</td>
-			<td>${item.nomAdherent}</td>
-			<td>${item.prenomAdherent}</td>
-            <td>${item.villeAdherent}</td>            
+			<td>${item.idOeuvrePret}</td>
+			<td>${item.titreOeuvrePret}</td>
+            <td>${item.proprietaire.nomProprietaire} ${item.proprietaire.prenomProprietaire}</td>
             <td>
             	<button type ="button" class = "btn-primary btn-xs">
             		Edit
             	</button>
-            	<a href="Controleur?action=supprimerAdherent&idAdherent=${item.idAdherent}" >
+            	<a href="Controleur?action=supprimerOeuvrePret&idOeuvrePret=${item.idOeuvrePret}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Delete
              		</button>
@@ -32,6 +30,12 @@
 		</tr>
 	</c:forEach>
 </TABLE>
+
+
+
+
+
+
 
 <a class="btn btn-default" href="index.jsp"><FONT face="Arial" color="#004080">Retour Accueil</FONT></a>
 
