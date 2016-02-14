@@ -8,58 +8,58 @@ import java.io.Serializable;
  * 
  */
 
-public class Oeuvrevente implements Serializable {
+public class OeuvreVente implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int idOeuvrevente;
-	private String etatOeuvrevente;
-	private float prixOeuvrevente;
-	private String titreOeuvrevente;
+	private int idOeuvreVente;
+	private String etatOeuvreVente;
+	private float prixOeuvreVente;
+	private String titreOeuvreVente;
 	private Proprietaire proprietaire;
 
 
-	public Oeuvrevente(int idOeuvrevente, String etatOeuvrevente, float prixOeuvrevente, String titreOeuvrevente,
+	public OeuvreVente(int idOeuvrevente, String etatOeuvrevente, float prixOeuvrevente, String titreOeuvrevente,
 			Proprietaire proprietaire) {
 		super();
-		this.idOeuvrevente = idOeuvrevente;
-		this.etatOeuvrevente = etatOeuvrevente;
-		this.prixOeuvrevente = prixOeuvrevente;
-		this.titreOeuvrevente = titreOeuvrevente;
+		this.idOeuvreVente = idOeuvrevente;
+		this.etatOeuvreVente = etatOeuvrevente;
+		this.prixOeuvreVente = prixOeuvrevente;
+		this.titreOeuvreVente = titreOeuvrevente;
 		this.proprietaire = proprietaire;
 	}
 
-	public Oeuvrevente() {
+	public OeuvreVente() {
 	}
 
-	public int getIdOeuvrevente() {
-		return this.idOeuvrevente;
+	public int getIdOeuvreVente() {
+		return this.idOeuvreVente;
 	}
 
-	public void setIdOeuvrevente(int idOeuvrevente) {
-		this.idOeuvrevente = idOeuvrevente;
+	public void setIdOeuvreVente(int idOeuvrevente) {
+		this.idOeuvreVente = idOeuvrevente;
 	}
 
-	public String getEtatOeuvrevente() {
-		return this.etatOeuvrevente;
+	public String getEtatOeuvreVente() {
+		return this.etatOeuvreVente;
 	}
 
-	public void setEtatOeuvrevente(String etatOeuvrevente) {
-		this.etatOeuvrevente = etatOeuvrevente;
+	public void setEtatOeuvreVente(String etatOeuvrevente) {
+		this.etatOeuvreVente = etatOeuvrevente;
 	}
 
-	public float getPrixOeuvrevente() {
-		return this.prixOeuvrevente;
+	public float getPrixOeuvreVente() {
+		return this.prixOeuvreVente;
 	}
 
-	public void setPrixOeuvrevente(float prixOeuvrevente) {
-		this.prixOeuvrevente = prixOeuvrevente;
+	public void setPrixOeuvreVente(float prixOeuvrevente) {
+		this.prixOeuvreVente = prixOeuvrevente;
+	}
+	
+	public String getTitreOeuvreVente() {
+		return this.titreOeuvreVente;
 	}
 
-	public String getTitreOeuvrevente() {
-		return this.titreOeuvrevente;
-	}
-
-	public void setTitreOeuvrevente(String titreOeuvrevente) {
-		this.titreOeuvrevente = titreOeuvrevente;
+	public void setTitreOeuvreVente(String titreOeuvrevente) {
+		this.titreOeuvreVente = titreOeuvrevente;
 	}
 
 	public Proprietaire getProprietaire() {

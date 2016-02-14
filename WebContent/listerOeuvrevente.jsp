@@ -13,13 +13,24 @@
 
 	</tr>
 
-	<c:forEach items="${mesOeuvrevente}" var="item">
+	<c:forEach items="${mesOeuvreVente}" var="item">
 		<tr>
-			<td>${item.idOeuvrevente}</td>
-			<td>${item.titreOeuvrevente}</td>
-			<td>${item.etatOeuvrevente}</td>
-            <td>${item.prixOeuvrevente} €</td>
-            <td>${item.proprietaire.nomProprietaire}</td>
+			<td>${item.idOeuvreVente}</td>
+			<td>${item.titreOeuvreVente}</td>
+			<td>${item.etatOeuvreVente}</td>
+            <td>${item.prixOeuvreVente} &euro;</td>
+            <td>${item.proprietaire.nomProprietaire} ${item.proprietaire.prenomProprietaire}</td>
+            <td>
+            	<button type ="button" class = "btn-primary btn-xs">
+            		Edit
+            	</button>
+            	<a href="Controleur?action=supprimerOeuvreVente&idOeuvreVente=${item.idOeuvreVente}" >
+            		<button type ="button" class = "btn-danger btn-xs"> 
+             			Delete
+             		</button>
+               	</a>
+             	
+             </td>
 		</tr>
 	</c:forEach>
 </TABLE>
