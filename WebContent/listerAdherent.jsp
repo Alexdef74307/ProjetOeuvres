@@ -20,11 +20,14 @@
             <td>${item.villeAdherent}</td>            
             <td>
             	<button type ="button" class = "btn-primary btn-xs">
-            		Edit            	
+            		Edit
             	</button>
-            	<button type ="button" class = "btn-danger btn-xs"> 
-            		Delete
-            	</button>
+            	<a href="Controleur?action=supprimerAdherent${item.idAdherent}" >
+            		<button type ="button" class = "btn-danger btn-xs"> 
+             			Delete
+             		</button>
+               	</a>
+             	
              </td>
 		</tr>
 	</c:forEach>

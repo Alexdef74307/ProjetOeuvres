@@ -48,6 +48,21 @@ public class ServiceAdherent {
 		String mysql = "select * from adherent";
 		return consulterListeAdherents(mysql);
 	}
+	
+	public void supprimerAdherent(String idAdherent) throws MonException {
+		String mysql = "delete from adherent where id_adherent = " + idAdherent;
+		supprimerAdherents(mysql);
+	}
+
+	private void supprimerAdherents(String mysql) throws MonException {
+		try{
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			unDialogueBd.execute(mysql);
+		}catch(Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+		
+	}
 
 	private List<Adherent> consulterListeAdherents(String mysql) throws MonException {
 		

@@ -78,8 +78,18 @@ public class Controleur extends HttpServlet {
 
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, MonException {
-		String actionName = request.getParameter(ACTION_TYPE);
+		String action = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
+		String actionName;
+		String actionId;
+		if(action.matches(".*\\d.*")){
+		    String[] parts = action.split("/");
+		    actionName	= parts[0];
+		    actionId = parts[1];
+		}else{
+			actionName = action;
+			actionId = "-1";
+		}
 		ServiceAdherent unServiceAdherent;
 		ServiceOeuvrevente unServiceOeuvrevente;
 		// execute l'action
@@ -118,7 +128,10 @@ public class Controleur extends HttpServlet {
 				
 			case supprimerAdherent : 
 				
-				// To be completed
+				unServiceAdherent = new ServiceAdherent();
+				unServiceAdherent.supprimerAdherent(actionId);
+				request.setAttribute("mesAdherents", unServiceAdherent.consulterListeAdherents());
+				destinationPage = "/listerAdherent.jsp";
 				
 				break;
 				
