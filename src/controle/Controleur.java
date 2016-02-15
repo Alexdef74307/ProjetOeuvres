@@ -36,7 +36,7 @@ public class Controleur extends HttpServlet {
 	private static final String modifierOeuvre = "modifierOeuvre";
 	private static final String supprimerOeuvreVente = "supprimerOeuvreVente";
 	private static final String supprimerOeuvrePret = "supprimerOeuvrePret";
-	
+	private static final String listerReservation = "listerReservation";
 	
 	//
 	private static final String ERROR_KEY = "messageErreur";
@@ -89,6 +89,7 @@ public class Controleur extends HttpServlet {
 		ServiceOeuvreVente unServiceOeuvreVente;
 		ServiceOeuvrePret unServiceOeuvrePret;
 		ServiceProprietaire unServiceProprietaire;
+		ServiceReservation unServiceReservation;
 		// execute l'action
 		System.out.println(action);
 		switch(action){
@@ -194,6 +195,13 @@ public class Controleur extends HttpServlet {
 				unServiceOeuvrePret.supprimerOeuvrePret(idOeuvrePret);
 				request.setAttribute("mesOeuvrePret", unServiceOeuvrePret.consulterListeOeuvresPrets());
 				destinationPage = "/listerOeuvrePret.jsp";
+				break;
+				
+			case listerReservation : 
+				
+				unServiceReservation = new ServiceReservation();
+				request.setAttribute("mesReservations", unServiceReservation.listerReservations());
+				destinationPage = "/listerReservations.jsp";
 				break;
 			
 				

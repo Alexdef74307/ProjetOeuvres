@@ -15,6 +15,8 @@
 			face="Arial">Lister les oeuvres en vente</font></a><font face="Arial"> </font></li>
 	<li><a href="Controleur?action=listerOeuvrePret"><font
 			face="Arial">Lister les oeuvres en pret</font></a><font face="Arial"> </font></li>
+	<li><a href="Controleur?action=listerReservation"><font
+			face="Arial">Lister les reservations</font></a><font face="Arial"> </font></li>
 	<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
 		face="Arial"> </font></li>
 		
