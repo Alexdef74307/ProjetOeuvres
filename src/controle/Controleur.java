@@ -24,15 +24,18 @@ public class Controleur extends HttpServlet {
 	// Revoir si utile ou non 
 	
 	private static final String listerAdherent = "listerAdherent";
+	private static final String listerProprietaires = "listerProprietaires";
 	private static final String ajouterAdherent = "ajouterAdherent";
 	private static final String insererAdherent = "insererAdherent";
 	private static final String modifierAdherent = "modifierAdherent";
 	private static final String supprimerAdherent = "supprimerAdherent";
+	private static final String supprimerProprietaire = "supprimerProprietaire";
 	private static final String listerOeuvreVente = "listerOeuvreVente";
 	private static final String listerOeuvrePret = "listerOeuvrePret";
 	private static final String reserverOeuvre = "reserverOeuvre";
 	private static final String modifierOeuvre = "modifierOeuvre";
 	private static final String supprimerOeuvreVente = "supprimerOeuvreVente";
+	private static final String supprimerOeuvrePret = "supprimerOeuvrePret";
 	
 	
 	//
@@ -80,12 +83,12 @@ public class Controleur extends HttpServlet {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, MonException {
 		String idAdherent;
-		String idOeuvreVente;
 		String action = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		ServiceAdherent unServiceAdherent;
 		ServiceOeuvreVente unServiceOeuvreVente;
 		ServiceOeuvrePret unServiceOeuvrePret;
+		ServiceProprietaire unServiceProprietaire;
 		// execute l'action
 		System.out.println(action);
 		switch(action){
@@ -131,6 +134,23 @@ public class Controleur extends HttpServlet {
 				
 				break;
 				
+			case supprimerProprietaire : 
+				
+				unServiceProprietaire = new ServiceProprietaire();
+				idAdherent = request.getParameter("idProprietaire");
+				unServiceProprietaire.supprimerProprietaire(idAdherent);
+				request.setAttribute("mesProprietaires", unServiceProprietaire.getProprietaires());
+				destinationPage = "/listerProprietaire.jsp";
+				break;
+				
+			case listerProprietaires : 	
+				
+				unServiceProprietaire = new ServiceProprietaire();
+				request.setAttribute("mesProprietaires", unServiceProprietaire.getProprietaires());
+				destinationPage = "/listerProprietaire.jsp";
+				break;
+			
+				
 			case listerOeuvreVente :
 				
 				unServiceOeuvreVente = new ServiceOeuvreVente();
@@ -160,13 +180,22 @@ public class Controleur extends HttpServlet {
 				
 			case supprimerOeuvreVente : 
 				
-				// To be completed
 				unServiceOeuvreVente = new ServiceOeuvreVente();
-				idOeuvreVente = request.getParameter("idOeuvreVente");
+				String idOeuvreVente = request.getParameter("idOeuvreVente");
 				unServiceOeuvreVente.supprimerOeuvreVente(idOeuvreVente);
 				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
 				destinationPage = "/listerOeuvreVente.jsp";
 				break;
+				
+			case supprimerOeuvrePret : 
+				
+				unServiceOeuvrePret = new ServiceOeuvrePret();
+				String idOeuvrePret = request.getParameter("idOeuvrePret");
+				unServiceOeuvrePret.supprimerOeuvrePret(idOeuvrePret);
+				request.setAttribute("mesOeuvrePret", unServiceOeuvrePret.consulterListeOeuvresPrets());
+				destinationPage = "/listerOeuvrePret.jsp";
+				break;
+			
 				
 			default : 
 				

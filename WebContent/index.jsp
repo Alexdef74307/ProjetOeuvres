@@ -9,6 +9,8 @@
 			face="Arial">Ajout Adhérent</font></a></li>
 	<li><a href="Controleur?action=listerAdherent"><font
 			face="Arial">Lister les adhérents</font></a><font face="Arial"> </font></li>
+	<li><a href="Controleur?action=listerProprietaires"><font
+			face="Arial">Lister les proprietaires</font></a><font face="Arial"> </font></li>
 	<li><a href="Controleur?action=listerOeuvreVente"><font
 			face="Arial">Lister les oeuvres en vente</font></a><font face="Arial"> </font></li>
 	<li><a href="Controleur?action=listerOeuvrePret"><font

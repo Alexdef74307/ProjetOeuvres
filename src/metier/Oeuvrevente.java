@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 
 /**
- * The persistent class for the oeuvrevente database table.
+ * The persistent class for the oeuvreVente database table.
  * 
  */
 

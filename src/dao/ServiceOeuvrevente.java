@@ -2,7 +2,6 @@ package dao;
 
 import meserreurs.MonException;
 import java.util.*;
-
 import metier.*;
 import persistance.*;
 
@@ -11,16 +10,23 @@ public class ServiceOeuvreVente {
 
 
 	
+	public List<OeuvreVente> consulterListeOeuvresVentes() throws MonException{
+		return get("select * from oeuvrevente");
+	}
+	
+	public OeuvreVente consulterOeuvreVente(String idOeuvreVente) throws MonException{
+		List<OeuvreVente> l  = get("select* from oeuvrevente where id_oeuvrevente = " + idOeuvreVente);
+		return l.get(0);
+	}
 	
 
-	public List<OeuvreVente> consulterListeOeuvresVentes() throws MonException {
-		String mySql = "select * from oeuvrevente"; 	
+	public List<OeuvreVente> get(String request) throws MonException {
 		List<Object> rs;
 		List<OeuvreVente> mesOeuvresVentes = new ArrayList<OeuvreVente>();
 		int index = 0;
 		try {
 			DialogueBd unDialogueBd = DialogueBd.getInstance();
-			rs = DialogueBd.lecture(mySql);
+			rs = DialogueBd.lecture(request);
 			ServiceProprietaire unServiceProprietaire = new ServiceProprietaire();
 			String idProprietaire;
 			while (index < rs.size()) {
@@ -42,10 +48,10 @@ public class ServiceOeuvreVente {
 	}
 	public void supprimerOeuvreVente(String idOeuvreVente) throws MonException {
 		String mysql = "delete from oeuvrevente where id_oeuvrevente = " + idOeuvreVente;
-		supprimerOeuvresVentes(mysql);
+		delete(mysql);
 	}
 	
-	private void supprimerOeuvresVentes(String mysql) throws MonException {
+	private void delete(String mysql) throws MonException {
 		try{
 			DialogueBd unDialogueBd = DialogueBd.getInstance();
 			unDialogueBd.execute(mysql);

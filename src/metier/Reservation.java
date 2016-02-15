@@ -14,7 +14,7 @@ public class Reservation implements Serializable {
 	
 	private Date date;
 	private Adherent adherent;
-	private OeuvreVente oeuvrevente;
+	private OeuvreVente oeuvreVente;
 
 	public Reservation() {
 	}
@@ -25,7 +25,7 @@ public class Reservation implements Serializable {
 		super();
 		this.date = date;
 		this.adherent = adherent;
-		this.oeuvrevente = oeuvrevente;
+		this.oeuvreVente = oeuvrevente;
 	}
 
 
@@ -46,12 +46,12 @@ public class Reservation implements Serializable {
 		this.adherent = adherent;
 	}
 
-	public OeuvreVente getOeuvrevente() {
-		return this.oeuvrevente;
+	public OeuvreVente getOeuvreVente() {
+		return this.oeuvreVente;
 	}
 
-	public void setOeuvrevente(OeuvreVente oeuvrevente) {
-		this.oeuvrevente = oeuvrevente;
+	public void setOeuvreVente(OeuvreVente oeuvrevente) {
+		this.oeuvreVente = oeuvrevente;
 	}
 
 }

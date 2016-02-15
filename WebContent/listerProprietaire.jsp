@@ -1,6 +1,6 @@
 <%@include file="include/header.jsp" %>
 	
-<h2>Liste des Adhérents</h2>
+<h2>Liste des Proprietaires</h2>
 
 <table BORDER="1" class="table table-striped table-bordered">
 	<caption>Tableau des Adhérents</caption>
@@ -8,21 +8,19 @@
 		<th>Numero</th>
 		<th>Nom</th>
 		<th>Prénom</th>
-		<th>Ville</th>
 
 	</tr>
 
-	<c:forEach items="${mesAdherents}" var="item">
+	<c:forEach items="${mesProprietaires}" var="item">
 		<tr>
-			<td>${item.idAdherent}</td>
-			<td>${item.nomAdherent}</td>
-			<td>${item.prenomAdherent}</td>
-            <td>${item.villeAdherent}</td>            
+			<td>${item.idProprietaire}</td>
+			<td>${item.nomProprietaire}</td>
+			<td>${item.prenomProprietaire}</td> 
             <td>
             	<button type ="button" class = "btn-primary btn-xs">
             		Edit
             	</button>
-            	<a href="Controleur?action=supprimerAdherent&idAdherent=${item.idAdherent}" >
+            	<a href="Controleur?action=supprimerProprietaire&idProprietaire=${item.idProprietaire}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Delete
              		</button>

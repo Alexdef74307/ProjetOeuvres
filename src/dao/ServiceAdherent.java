@@ -51,10 +51,10 @@ public class ServiceAdherent {
 	
 	public void supprimerAdherent(String idAdherent) throws MonException {
 		String mysql = "delete from adherent where id_adherent = " + idAdherent;
-		supprimerAdherents(mysql);
+		delete(mysql);
 	}
 
-	private void supprimerAdherents(String mysql) throws MonException {
+	private void delete(String mysql) throws MonException {
 		try{
 			DialogueBd unDialogueBd = DialogueBd.getInstance();
 			unDialogueBd.execute(mysql);

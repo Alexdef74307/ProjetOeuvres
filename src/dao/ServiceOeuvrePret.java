@@ -23,7 +23,7 @@ public class ServiceOeuvrePret {
 			String idProprietaire;
 			while (index < rs.size()) {
 				OeuvrePret uneOeuvrePret = new OeuvrePret();
-				uneOeuvrePret.setIdOeuvrePret(Integer.parseInt(rs.get(+0).toString()));
+				uneOeuvrePret.setIdOeuvrePret(Integer.parseInt(rs.get(index+0).toString()));
 				uneOeuvrePret.setTitreOeuvrePret(rs.get(index+1).toString());
 				idProprietaire = rs.get(index+2).toString();
 				uneOeuvrePret.setProprietaire(unServiceProprietaire.getProprietaire(idProprietaire)); 
@@ -36,12 +36,14 @@ public class ServiceOeuvrePret {
 			throw new MonException(exc.getMessage(), "systeme");
 		}
 	}
-	/*public void supprimerOeuvreVente(String idOeuvreVente) throws MonException {
-		String mysql = "delete from oeuvrevente where id_oeuvrevente = " + idOeuvreVente;
-		supprimerOeuvresVentes(mysql);
+	
+	
+	public void supprimerOeuvrePret(String idOeuvrePret) throws MonException {
+		String mysql = "delete from oeuvrepret where id_oeuvrepret = " + idOeuvrePret;
+		delete(mysql);
 	}
 	
-	private void supprimerOeuvresVentes(String mysql) throws MonException {
+	private void delete(String mysql) throws MonException {
 		try{
 			DialogueBd unDialogueBd = DialogueBd.getInstance();
 			unDialogueBd.execute(mysql);
@@ -51,5 +53,5 @@ public class ServiceOeuvrePret {
 	
 	
 	
-	}*/
+	}
 }
