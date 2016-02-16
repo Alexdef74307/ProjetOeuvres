@@ -12,10 +12,10 @@
 
 	</tr>
 
-	<c:forEach items="${mesAdherents}" var="item">
+	<c:forEach items="${mesReservations}" var="item">
 		<tr>
-			<td>${item.adherent}</td>
-			<td>${item.oeuvreVente}</td>
+			<td>${item.adherent.nomAdherent} ${item.adherent.prenomAdherent}</td>
+			<td>${item.oeuvreVente.titreOeuvreVente	}</td>
 			<td>${item.date}</td>
             <td>${item.statut}</td>            
             <td>
