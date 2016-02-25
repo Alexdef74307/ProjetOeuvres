@@ -37,7 +37,7 @@ public class Controleur extends HttpServlet {
 	private static final String supprimerOeuvreVente = "supprimerOeuvreVente";
 	private static final String supprimerOeuvrePret = "supprimerOeuvrePret";
 	private static final String listerReservation = "listerReservation";
-	
+	private static final String supprimerReservation = "supprimerReservation";
 	//
 	private static final String ERROR_KEY = "messageErreur";
 	private static final String ERROR_PAGE = "/erreur.jsp";
@@ -83,6 +83,7 @@ public class Controleur extends HttpServlet {
 	protected void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, MonException {
 		String idAdherent;
+		String idOeuvreVente;
 		String action = request.getParameter(ACTION_TYPE);
 		String destinationPage = ERROR_PAGE;
 		ServiceAdherent unServiceAdherent;
@@ -182,7 +183,7 @@ public class Controleur extends HttpServlet {
 			case supprimerOeuvreVente : 
 				
 				unServiceOeuvreVente = new ServiceOeuvreVente();
-				String idOeuvreVente = request.getParameter("idOeuvreVente");
+				idOeuvreVente = request.getParameter("idOeuvreVente");
 				unServiceOeuvreVente.supprimerOeuvreVente(idOeuvreVente);
 				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
 				destinationPage = "/listerOeuvreVente.jsp";
@@ -204,6 +205,15 @@ public class Controleur extends HttpServlet {
 				destinationPage = "/listerReservations.jsp";
 				break;
 			
+			case supprimerReservation : 
+				unServiceReservation = new ServiceReservation();
+				idAdherent = request.getParameter("idAdherent");
+				String dateReservation = request.getParameter("dateReservation");
+				idOeuvreVente = request.getParameter("idOeuvreVente");
+				unServiceReservation.supprimer(idOeuvreVente,dateReservation,idAdherent);
+				request.setAttribute("mesAdherents", unServiceReservation.listerReservations());
+				destinationPage = "/listerReservations.jsp";
+				break;
 				
 			default : 
 				

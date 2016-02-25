@@ -22,7 +22,7 @@
             	<button type ="button" class = "btn-primary btn-xs">
             		Edit
             	</button>
-            	<a href="Controleur?action=supprimerAdherent&idAdherent=${item.adherent}" >
+            	<a href="Controleur?action=supprimerReservation&idAdherent=${item.adherent.idAdherent}&dateReservation=${item.date}&idOeuvreVente=${item.oeuvreVente.idOeuvreVente}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Delete
              		</button>

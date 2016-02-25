@@ -44,6 +44,24 @@ public class ServiceReservation {
 			throw new MonException(exc.getMessage(), "systeme");
 		}		
 	}
+	
+	public void supprimer(String oeuvreVente, String dateReservation, String adherent) throws MonException{
+		String requete = "delete from reservation where (id_oeuvrevente = " + oeuvreVente + "and (id_adherent = " + adherent 
+				+ ")and (date_reservation = " + dateReservation + "))";
+		supprimer(requete);
+	}
+	
+	private void supprimer(String mysql) throws MonException{
+		try{
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			unDialogueBd.execute(mysql);
+		}catch(Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+		
+	}
+		
+}
 
 	
-}
+
