@@ -40,7 +40,7 @@ public class Controleur extends HttpServlet {
 	private static final String supprimerReservation = "supprimerReservation";
 	//
 	private static final String ERROR_KEY = "messageErreur";
-	private static final String ERROR_PAGE = "/erreur.jsp";
+	private static final String ERROR_PAGE = "/error404.jsp";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -85,6 +85,7 @@ public class Controleur extends HttpServlet {
 		String idAdherent;
 		String idOeuvreVente;
 		String action = request.getParameter(ACTION_TYPE);
+		System.out.println(action);
 		String destinationPage = ERROR_PAGE;
 		ServiceAdherent unServiceAdherent;
 		ServiceOeuvreVente unServiceOeuvreVente;
@@ -156,6 +157,7 @@ public class Controleur extends HttpServlet {
 			case listerOeuvreVente :
 				
 				unServiceOeuvreVente = new ServiceOeuvreVente();
+				System.out.println("patate");
 				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
 				destinationPage = "/listerOeuvreVente.jsp";
 				break;
@@ -219,6 +221,7 @@ public class Controleur extends HttpServlet {
 				
 				String messageErreur = "[" + action + "] n'est pas une action valide.";
 				request.setAttribute(ERROR_KEY, messageErreur);
+
 		}
 		
 		// Redirection vers la page jsp appropriee

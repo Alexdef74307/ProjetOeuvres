@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <head>
    	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<script src="bootstrap/js/jquery.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+   	<link href="css/style.css" rel="stylesheet">
+	
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="refresh" content="0;URL=javascript:fermer();">
@@ -15,7 +15,7 @@
 </head>
 
 
-<script language="JavaScript">
+<script>
 	function fermer() {
 
 	}
