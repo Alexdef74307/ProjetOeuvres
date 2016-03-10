@@ -3,6 +3,7 @@ package dao;
 import meserreurs.MonException;
 import java.util.*;
 import metier.*;
+import metier.OeuvreVente;
 import persistance.*;
 
 public class ServiceOeuvreVente {

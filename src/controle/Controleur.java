@@ -132,8 +132,7 @@ public class Controleur extends HttpServlet {
 				unServiceAdherent = new ServiceAdherent();
 				idAdherent = request.getParameter("idAdherent");
 				unServiceAdherent.supprimerAdherent(idAdherent);
-				request.setAttribute("mesAdherents", unServiceAdherent.consulterListeAdherents());
-				destinationPage = "/listerAdherent.jsp";
+				destinationPage = "/Controleur?action=listerAdherent"; 
 				
 				break;
 				
@@ -157,7 +156,6 @@ public class Controleur extends HttpServlet {
 			case listerOeuvreVente :
 				
 				unServiceOeuvreVente = new ServiceOeuvreVente();
-				System.out.println("patate");
 				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
 				destinationPage = "/listerOeuvreVente.jsp";
 				break;
