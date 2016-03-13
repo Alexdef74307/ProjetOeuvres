@@ -1,7 +1,8 @@
 <%@include file="include/header.jsp" %>
+
+<h2>Ajouter une &oelig;uvre en vente</h2>    
     
-    
-<form name='identification' method="post" action="Controlzue?action=insererOeuvreVente" onsubmit="return teste()">
+<form name='identification' method="post" action="Controleur?action=insererOeuvreVente" onsubmit="return teste()">
     
     
     
@@ -15,7 +16,7 @@
         <input type="number" class"form-control" name="numberPrix" id="prix">
     </div>
     <div class="form-group">
-        <lavel for="InputProprietaire">Propriétaire de l'oeuvre</lavel>
+        <lavel for="InputProprietaire">Propri&eacute;taire de l'oeuvre</lavel>
          <select name="cars">
             <c:forEach items="${mesProprietaires}" var="proprietaires">
                 <option value =${item.idProprietaire}> ${item.prenomProprietaire} ${item.nomProprietaire}</option>

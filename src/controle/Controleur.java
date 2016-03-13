@@ -30,6 +30,7 @@ public class Controleur extends HttpServlet {
 	private static final String modifierAdherent = "modifierAdherent";
 	private static final String supprimerAdherent = "supprimerAdherent";
 	private static final String supprimerProprietaire = "supprimerProprietaire";
+	private static final String ajouterOeuvreVente = "ajouterOeuvreVente";
 	private static final String listerOeuvreVente = "listerOeuvreVente";
 	private static final String listerOeuvrePret = "listerOeuvrePret";
 	private static final String reserverOeuvre = "reserverOeuvre";
@@ -152,12 +153,17 @@ public class Controleur extends HttpServlet {
 				destinationPage = "/listerProprietaire.jsp";
 				break;
 			
+			case ajouterOeuvreVente :
+				
+				destinationPage = "/ajouterOeuvreVente.jsp";
+				
+				break;
 				
 			case listerOeuvreVente :
 				
 				unServiceOeuvreVente = new ServiceOeuvreVente();
 				request.setAttribute("mesOeuvreVente", unServiceOeuvreVente.consulterListeOeuvresVentes());
-				destinationPage = "/listerOeuvreVente.jsp";
+				destinationPage = "/testOeuvreVente.jsp";
 				break;
 				
 			case listerOeuvrePret :

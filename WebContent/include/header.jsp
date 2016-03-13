@@ -17,7 +17,9 @@
 
 <script>
 	function fermer() {
-
+		if (confirm("Voulez-vous quitter?")) {
+		    window.close();
+		  }
 	}
 </script>
 
@@ -54,12 +56,34 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Oeuvre<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            	<li>
+                                    <a href="Controleur?action=ajouterOeuvreVente">Ajout d'une oeuvre en vente</a>
+                                </li>
+                                <li>
+                                    <a href="Controleur?action=listerOeuvreVente">Liste des oeuvres en vente</a>
+                                </li>
+                                <li>
+                                    <a href="Controleur?action=listerOeuvrePret">Liste des oeuvres en prêt</a>
+                                </li>
+                                <li>
+                                    <a href="Controleur?action=listerProprietaires">Liste des propriétaires</a>
+                                </li>
+                                <li>
+                                    <a href="Controleur?action=listerReservation">Liste des réservations</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <!-- <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div><!--/.nav-collapse -->
             </div>
         </nav>

@@ -16,13 +16,13 @@
 			<td>${item.idProprietaire}</td>
 			<td>${item.nomProprietaire}</td>
 			<td>${item.prenomProprietaire}</td> 
-            <td>
+            <td class="actions">
             	<button type ="button" class = "btn-primary btn-xs">
-            		Edit
+            		Modifier
             	</button>
             	<a href="Controleur?action=supprimerProprietaire&idProprietaire=${item.idProprietaire}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
-             			Delete
+             			Supprimer
              		</button>
                	</a>
              	

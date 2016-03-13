@@ -2,6 +2,8 @@
 
 <form  name='identification' method="post" action="Controleur?action=insererAdherent" onsubmit="return teste()">
 
+	<h2>Ajouter un adhérent</h2>
+
     <div class="form-group">   
 		<label for="InputLastName">Nom de l'adhérent :</label>
 	    <input type="text" class="form-control" name="txtnom" value=""  id ="nom">

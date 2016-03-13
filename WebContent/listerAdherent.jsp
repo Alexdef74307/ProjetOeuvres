@@ -18,13 +18,13 @@
 			<td>${item.nomAdherent}</td>
 			<td>${item.prenomAdherent}</td>
             <td>${item.villeAdherent}</td>            
-            <td>
+            <td class="actions">
             	<button type ="button" class = "btn-primary btn-xs">
-            		Edit
+            		Modifier
             	</button>
             	<a href="Controleur?action=supprimerAdherent&idAdherent=${item.idAdherent}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
-             			Delete
+             			Supprimer
              		</button>
                	</a>
              	
