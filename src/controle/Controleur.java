@@ -31,6 +31,7 @@ public class Controleur extends HttpServlet {
 	private static final String supprimerAdherent = "supprimerAdherent";
 	private static final String supprimerProprietaire = "supprimerProprietaire";
 	private static final String ajouterOeuvreVente = "ajouterOeuvreVente";
+	private static final String insererOeuvreVente = "insererOeuvreVente";
 	private static final String listerOeuvreVente = "listerOeuvreVente";
 	private static final String listerOeuvrePret = "listerOeuvrePret";
 	private static final String reserverOeuvre = "reserverOeuvre";
@@ -155,8 +156,24 @@ public class Controleur extends HttpServlet {
 			
 			case ajouterOeuvreVente :
 				
+				unServiceProprietaire = new ServiceProprietaire();
+				request.setAttribute("mesProprietaires", unServiceProprietaire.getProprietaires());
 				destinationPage = "/ajouterOeuvreVente.jsp";
+				break;
 				
+			case insererOeuvreVente : 
+				
+				OeuvreVente uneOeuvreVente = new OeuvreVente();
+				uneOeuvreVente.setTitreOeuvreVente(request.getParameter("txtTitre"));
+				uneOeuvreVente.setPrixOeuvreVente((Float.parseFloat(request.getParameter("numberPrix"))));
+				String idProprietaire = request.getParameter("proprietaire");
+				unServiceProprietaire = new ServiceProprietaire();
+				Proprietaire p = unServiceProprietaire.getProprietaire(idProprietaire);
+				uneOeuvreVente.setProprietaire(p);
+				unServiceOeuvreVente = new ServiceOeuvreVente();
+				unServiceOeuvreVente.insertOeuvreVente(uneOeuvreVente);
+		//		unServiceAdherent.insertAdherent(unAdherent);
+				destinationPage = "/index.jsp";
 				break;
 				
 			case listerOeuvreVente :

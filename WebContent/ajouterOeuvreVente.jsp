@@ -12,14 +12,14 @@
     </div>
     
     <div class="form-group">
-        <label for="InputPrix">Etat de l'oeuvre</label>
+        <label for="InputPrix">Prix de l'oeuvre</label>
         <input type="number" class"form-control" name="numberPrix" id="prix">
     </div>
     <div class="form-group">
-        <lavel for="InputProprietaire">Propri&eacute;taire de l'oeuvre</lavel>
-         <select name="cars">
+        <label for="InputProprietaire">Propri&eacute;taire de l'oeuvre</label>
+         <select name="proprietaire">
             <c:forEach items="${mesProprietaires}" var="proprietaires">
-                <option value =${item.idProprietaire}> ${item.prenomProprietaire} ${item.nomProprietaire}</option>
+                <option value ="${proprietaires.idProprietaire}"> ${proprietaires.prenomProprietaire} ${proprietaires.nomProprietaire}</option>
          	</c:forEach>
          </select>
     </div>

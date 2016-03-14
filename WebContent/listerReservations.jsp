@@ -13,9 +13,9 @@
 	</tr>
 
 	<c:forEach items="${mesReservations}" var="item">
-		<tr>
-			<td>${item.adherent.nomAdherent} ${item.adherent.prenomAdherent}</td>
+		<tr>			
 			<td>${item.oeuvreVente.titreOeuvreVente	}</td>
+			<td>${item.adherent.nomAdherent} ${item.adherent.prenomAdherent}</td>
 			<td>${item.date}</td>
             <td>${item.statut}</td>            
             <td class="actions">
