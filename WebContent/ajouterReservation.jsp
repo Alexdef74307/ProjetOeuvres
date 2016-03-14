@@ -9,34 +9,23 @@
         <label for="InputProprietaire">Adh&eacute;rant souhaitant r&eacute;server</label>
          <select name="adherent">
             <c:forEach items="${mesAdherents}" var="adherent">
-                <option value ="${adherent.idAdherent}"> ${adherent.prenomAdherent} ${adherent.nomAdherent}</option>
+                <option value ="${adherent.idAdherent}"> ${adherent.idAdherent} ${adherent.prenomAdherent} ${adherent.nomAdherent}</option>
          	</c:forEach>
          </select>
     </div>
     
     <div class="form-group">
-        <label for="InputProprietaire">Adh&eacute;rant souhaitant r&eacute;server</label>
-         <select name="adherent">
-            <c:forEach items="${mes}" var="adherent">
-                <option value ="${adherent.idAdherent}"> ${adherent.prenomAdherent} ${adherent.nomAdherent}</option>
+        <label for="InputProprietaire">Oeuvre à r&eacute;server</label>
+         <select name="oeuvreVente">
+            <c:forEach items="${mesOeuvresVentes}" var="oeuvreVente">
+                <option value ="${oeuvreVente.idOeuvreVente}"> ${oeuvreVente.idOeuvreVente} ${oeuvreVente.titreOeuvreVente}</option>
          	</c:forEach>
          </select>
     </div>
 
-
-    <div class="form-group">   
-		<label for="InputLastName">Nom de l'adhérent :</label>
-	    <input type="text" class="form-control" name="txtnom" value=""  id ="nom">
-    </div>
-    
-	<div class="form-group">
-		<label for="InputFirstName">Prénom de l'adhérent :</label>
-        <input type="text" class="form-control" name="txtprenom"  id ="prenom">
-    </div>
-    
     <div class="form-group">
-    	<label for="InputCity">Ville de l'adhérent :</label>   
-        <INPUT type="text" class="form-control" name="txtville" id ="ville">
+    	<label for="InputCity">Date de réservation :</label>   
+        <INPUT type="date" class="form-control" name="txtdate" id ="date">
     </div>
          
     <!-- Boutons Ajouter -->       

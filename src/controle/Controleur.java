@@ -1,6 +1,7 @@
 package controle;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,11 +35,12 @@ public class Controleur extends HttpServlet {
 	private static final String insererOeuvreVente = "insererOeuvreVente";
 	private static final String listerOeuvreVente = "listerOeuvreVente";
 	private static final String listerOeuvrePret = "listerOeuvrePret";
-	private static final String reserverOeuvre = "reserverOeuvre";
 	private static final String modifierOeuvre = "modifierOeuvre";
 	private static final String supprimerOeuvreVente = "supprimerOeuvreVente";
 	private static final String supprimerOeuvrePret = "supprimerOeuvrePret";
 	private static final String listerReservation = "listerReservation";
+	private static final String ajouterReservation = "ajouterReservation";
+	private static final String insererReservation = "insererReservation";
 	private static final String supprimerReservation = "supprimerReservation";
 	//
 	private static final String ERROR_KEY = "messageErreur";
@@ -172,7 +174,6 @@ public class Controleur extends HttpServlet {
 				uneOeuvreVente.setProprietaire(p);
 				unServiceOeuvreVente = new ServiceOeuvreVente();
 				unServiceOeuvreVente.insertOeuvreVente(uneOeuvreVente);
-		//		unServiceAdherent.insertAdherent(unAdherent);
 				destinationPage = "/index.jsp";
 				break;
 				
@@ -191,12 +192,37 @@ public class Controleur extends HttpServlet {
 				break;
 			
 				
-			case reserverOeuvre : 
+			case ajouterReservation : 
 				
-				// To be completed
+				unServiceOeuvreVente = new ServiceOeuvreVente();
+				request.setAttribute("mesOeuvresVentes", unServiceOeuvreVente.consulterListeOeuvresVentes());
+				unServiceAdherent = new ServiceAdherent();
+				request.setAttribute("mesAdherents", unServiceAdherent.consulterListeAdherents());
 				destinationPage = "/ajouterReservation.jsp";
 				
 				break;
+				
+			case insererReservation :
+				
+				unServiceReservation = new ServiceReservation();
+				Reservation uneReservation = new Reservation();				
+				Adherent adherent = new ServiceAdherent().consulterAdherent(Integer.parseInt(request.getParameter("adherent")));
+				uneReservation.setAdherent(adherent);
+				OeuvreVente oeuvre = new ServiceOeuvreVente().consulterOeuvreVente(request.getParameter("oeuvreVente"));
+				uneReservation.setOeuvreVente(oeuvre);
+				String s = request.getParameter("txtdate");
+				
+				String[] dateTab = s.split("-");	
+				Date d = new Date();
+				d.setDate(Integer.parseInt(dateTab[2]));
+				d.setMonth(Integer.parseInt(dateTab[1]));
+				d.setYear(Integer.parseInt(dateTab[0]));
+				uneReservation.setDate(d);
+				unServiceReservation.insererReservation(uneReservation);
+				
+				
+		//		unServiceAdherent.insertAdherent(unAdherent);
+				destinationPage = "/index.jsp";
 				
 			case modifierOeuvre : 
 				

@@ -43,7 +43,7 @@
 	</a>
 </div>
 <div class="col-md-4">
-	<a href="Controleur?action=reserverOeuvre">
+	<a href="Controleur?action=ajouterReservation">
 		<img src="img/add_reservation.png" class="icon" alt="Réserver &oelig;uvre"/>
 		<p class="indication">Réserver une &oelig;uvre</p>
 	</a>

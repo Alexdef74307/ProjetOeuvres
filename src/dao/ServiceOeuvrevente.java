@@ -32,7 +32,7 @@ public class ServiceOeuvreVente {
 			String idProprietaire;
 			while (index < rs.size()) {
 				OeuvreVente uneOeuvreVente = new OeuvreVente();
-				uneOeuvreVente.setIdOeuvreVente(Integer.parseInt(rs.get(+0).toString()));
+				uneOeuvreVente.setIdOeuvreVente(Integer.parseInt(rs.get(index+0).toString()));
 				uneOeuvreVente.setTitreOeuvreVente(rs.get(index+1).toString());
 				uneOeuvreVente.setEtatOeuvreVente(rs.get(index + 2).toString());
 				uneOeuvreVente.setPrixOeuvreVente(Float.parseFloat(rs.get(index+3).toString()));
@@ -40,6 +40,7 @@ public class ServiceOeuvreVente {
 				uneOeuvreVente.setProprietaire(unServiceProprietaire.getProprietaire(idProprietaire)); 
 				index = index + 5;
 				mesOeuvresVentes.add(uneOeuvreVente);
+				System.out.println(uneOeuvreVente.getIdOeuvreVente());
 			}
 	
 			return mesOeuvresVentes;

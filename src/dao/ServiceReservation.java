@@ -60,6 +60,25 @@ public class ServiceReservation {
 		}
 		
 	}
+
+
+	public void insererReservation(Reservation uneReservation) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into reservation  (id_adherent,id_oeuvrevente,date_reservation,statut)  " + "values ('"
+					+ uneReservation.getAdherent().getIdAdherent();
+			mysql += "'" + ",'" + uneReservation.getOeuvreVente().getIdOeuvreVente() 
+					+ "','" + uneReservation.getDate().getYear() +"-"+uneReservation.getDate().getMonth()+"-"+
+					uneReservation.getDate().getDay()+ "','confirmee')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+		
+	}
 		
 }
 

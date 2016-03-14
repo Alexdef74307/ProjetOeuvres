@@ -81,7 +81,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             	<li>
-                                    <a href="Controleur?action=reserverOeuvre">Ajout d'une réservation</a>
+                                    <a href="Controleur?action=ajouterReservation">Ajout d'une réservation</a>
                                 </li>
                                 <li>
                                     <a href="Controleur?action=listerReservation">Liste des réservations</a>
