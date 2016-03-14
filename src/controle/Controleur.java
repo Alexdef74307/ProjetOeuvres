@@ -194,6 +194,7 @@ public class Controleur extends HttpServlet {
 			case reserverOeuvre : 
 				
 				// To be completed
+				destinationPage = "/ajouterReservation.jsp";
 				
 				break;
 				

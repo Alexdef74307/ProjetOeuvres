@@ -43,6 +43,12 @@
 	</a>
 </div>
 <div class="col-md-4">
+	<a href="Controleur?action=reserverOeuvre">
+		<img src="img/add_reservation.png" class="icon" alt="Réserver &oelig;uvre"/>
+		<p class="indication">Réserver une &oelig;uvre</p>
+	</a>
+</div>
+<div class="col-md-4">
 	<a href="Controleur?action=listerReservation">
 		<img src="img/list_reservations.png" class="icon" alt="Lister réservations"/>
 		<p class="indication">Lister les réservations</p>

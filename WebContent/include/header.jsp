@@ -73,6 +73,16 @@
                                 <li>
                                     <a href="Controleur?action=listerProprietaires">Liste des propriétaires</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Réservations<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            	<li>
+                                    <a href="Controleur?action=reserverOeuvre">Ajout d'une réservation</a>
+                                </li>
                                 <li>
                                     <a href="Controleur?action=listerReservation">Liste des réservations</a>
                                 </li>

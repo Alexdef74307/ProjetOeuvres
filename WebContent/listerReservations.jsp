@@ -1,9 +1,9 @@
 <%@include file="include/header.jsp" %>
 	
-<h2>Liste des Adhérents</h2>
+<h2>Liste des réservations</h2>
 
 <table BORDER="1" class="table table-striped table-bordered">
-	<caption>Tableau des Adhérents</caption>
+	<caption>Tableau des réservations</caption>
 	<tr>
 		<th>Oeuvre Vente</th>
 		<th>Adhérent</th>
