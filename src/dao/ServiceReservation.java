@@ -46,8 +46,8 @@ public class ServiceReservation {
 	}
 	
 	public void supprimer(String oeuvreVente, String dateReservation, String adherent) throws MonException{
-		String requete = "delete from reservation where (id_oeuvrevente = " + oeuvreVente + "and (id_adherent = " + adherent 
-				+ ")and (date_reservation = " + dateReservation + "))";
+		String requete = "delete from reservation where (reservation.id_oeuvrevente =" + oeuvreVente + " and reservation.id_adherent =" + adherent 
+				+" and reservation.date_reservation ='" + dateReservation + "')";
 		supprimer(requete);
 	}
 	

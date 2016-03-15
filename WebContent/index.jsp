@@ -16,6 +16,14 @@
 		<p class="indication">Lister les adhérents</p>
 	</a>
 </div>
+
+<div class="col-md-4">
+	<a href="Controleur?action=ajouterProprietaire">
+		<img src="img/add_user.png" class="icon" alt="Ajouter proprietaire"/>
+		<p class="indication">Ajouter un proprietaire</p>
+	</a>
+</div>
+
 <div class="col-md-4">
 	<a href="Controleur?action=listerProprietaires">
 		<img src="img/list_owners.png" class="icon" alt="Lister propriétaires"/>
@@ -36,6 +44,14 @@
 		<p class="indication">Lister les &oelig;uvres en vente</p>
 	</a>
 </div>
+
+<div class="col-md-4">
+	<a href="Controleur?action=ajouterOeuvrePret">
+		<img src="img/add_artwork.png" class="icon" alt="Ajouter &oelig;uvres en pret"/>
+		<p class="indication">Ajouter une &oelig;uvre en pret</p>
+	</a>
+</div>
+
 <div class="col-md-4">
 	<a href="Controleur?action=listerOeuvrePret">
 		<img src="img/list_lended_artworks.png" class="icon" alt="Lister &oelig;uvres en prêt"/>

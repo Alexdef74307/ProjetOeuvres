@@ -2,6 +2,8 @@
 	
 <h2>Liste des Adhérents</h2>
 
+<p style="color:red;"> Attention ! La suppression d'un adhérent entraine la suppression des réservations qui lui sont liées.</p>
+
 <table BORDER="1" class="table table-striped table-bordered">
 	<caption>Tableau des Adhérents</caption>
 	<tr>
@@ -19,9 +21,6 @@
 			<td>${item.prenomAdherent}</td>
             <td>${item.villeAdherent}</td>            
             <td class="actions">
-            	<button type ="button" class = "btn-primary btn-xs">
-            		Modifier
-            	</button>
             	<a href="Controleur?action=supprimerAdherent&idAdherent=${item.idAdherent}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Supprimer

@@ -50,6 +50,8 @@ public class ServiceAdherent {
 	}
 	
 	public void supprimerAdherent(String idAdherent) throws MonException {
+		String mysql1 = "delete from reservation where id_adherent = " + idAdherent;
+		delete(mysql1);
 		String mysql = "delete from adherent where id_adherent = " + idAdherent;
 		delete(mysql);
 	}

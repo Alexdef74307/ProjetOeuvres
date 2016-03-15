@@ -2,6 +2,8 @@
 	
 <h2>Liste des Proprietaires</h2>
 
+<p style="color:red;"> Attention ! La suppression d'un propriétaire entraine la suppression de toutes les oeuvres qui lui sont liées.</p>
+
 <table BORDER="1" class="table table-striped table-bordered">
 	<caption>Tableau des Adhérents</caption>
 	<tr>
@@ -17,9 +19,6 @@
 			<td>${item.nomProprietaire}</td>
 			<td>${item.prenomProprietaire}</td> 
             <td class="actions">
-            	<button type ="button" class = "btn-primary btn-xs">
-            		Modifier
-            	</button>
             	<a href="Controleur?action=supprimerProprietaire&idProprietaire=${item.idProprietaire}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Supprimer

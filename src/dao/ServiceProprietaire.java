@@ -50,6 +50,14 @@ private List<Proprietaire> get(String requete) throws MonException
 	
 }
 public void supprimerProprietaire(String idProprietaire) throws MonException {
+	String mysql2 = "delete from reservation" +
+			" where id_oeuvrevente in (select id_oeuvrevente from oeuvrevente" + 
+					" where id_proprietaire = '"+ idProprietaire +"' )";
+	delete(mysql2);	
+	String mysql12 = "delete from oeuvrepret where id_proprietaire = " + idProprietaire;
+	delete(mysql12);	
+	String mysql1 = "delete from oeuvrevente where id_proprietaire = " + idProprietaire;
+	delete(mysql1);
 	String mysql = "delete from proprietaire where id_proprietaire = " + idProprietaire;
 	delete(mysql);
 }
@@ -62,6 +70,26 @@ private void delete(String mysql) throws MonException {
 		throw new MonException(exc.getMessage(), "systeme");
 	}
 	
+}
+
+public void insertProprietaire(Proprietaire unProprietaire) {
+	String mysql;
+
+	DialogueBd unDialogueBd = DialogueBd.getInstance();
+	try {
+		mysql = "insert into proprietaire  (nom_proprietaire,prenom_proprietaire)  " + "values ('"
+				+ unProprietaire.getNomProprietaire();
+		mysql += "'" + ",'" + unProprietaire.getPrenomProprietaire() +"')";
+
+		unDialogueBd.insertionBD(mysql);
+	} catch (MonException e) {
+		try {
+			throw e;
+		} catch (MonException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 }
 	
 	

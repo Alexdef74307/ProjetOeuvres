@@ -25,7 +25,7 @@
 
     <div class="form-group">
     	<label for="InputCity">Date de réservation :</label>   
-        <INPUT type="date" class="form-control" name="txtdate" id ="date">
+        <INPUT type="date" required class="form-control" name="txtdate" id ="date">
     </div>
          
     <!-- Boutons Ajouter -->       

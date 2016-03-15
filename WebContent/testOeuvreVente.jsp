@@ -2,6 +2,10 @@
 
 <h2>Listes des Oeuvres en vente</h2>
 
+
+<p style="color:red;"> Attention ! La suppression d'une oeuvre en vente entraine la suppression des réservations qui lui sont liées.</p>
+
+
 <table BORDER="1" class="table table-striped table-bordered">
 	<caption>Tableau des Oeuvre en vente</caption>
 	<tr>
@@ -21,9 +25,6 @@
             <td>${item.prixOeuvreVente} &euro;</td>
             <td>${item.proprietaire.nomProprietaire} ${item.proprietaire.prenomProprietaire}</td>
             <td class="actions">
-            	<button type ="button" class = "btn-primary btn-xs">
-            		Modifier
-            	</button>
             	<a href="Controleur?action=supprimerOeuvreVente&idOeuvreVente=${item.idOeuvreVente}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Supprimer

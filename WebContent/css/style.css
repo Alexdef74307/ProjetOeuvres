@@ -5,7 +5,8 @@ html {
 body {
 	min-height: 100vh;
 	opacity: .95;
-		background-image: url("http://img08.deviantart.net/25db/i/2013/215/a/3/bubble_background_by_diversekitty-d6giw39.png");
+	background-attachment: fixed;
+	background-image: url("http://img08.deviantart.net/25db/i/2013/215/a/3/bubble_background_by_diversekitty-d6giw39.png");
 /* 		background-image: url("WebContent/img/background-image.png");
  */
  }
@@ -21,7 +22,6 @@ body {
 
 body > .container {
 	min-height: 91vh;
-	background-color: #fff;
 }
 
 img.icon {
@@ -34,5 +34,5 @@ img.icon {
 }
 
 .actions {
-	width: 150px;
+	width: 80px;
 }

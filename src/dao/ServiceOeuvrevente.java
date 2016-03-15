@@ -49,6 +49,8 @@ public class ServiceOeuvreVente {
 		}
 	}
 	public void supprimerOeuvreVente(String idOeuvreVente) throws MonException {
+		String mysql1 = "delete from reservation where id_oeuvrevente = " + idOeuvreVente;
+		delete(mysql1);
 		String mysql = "delete from oeuvrevente where id_oeuvrevente = " + idOeuvreVente;
 		delete(mysql);
 	}
@@ -80,6 +82,23 @@ public class ServiceOeuvreVente {
 				e1.printStackTrace();
 			}
 		}
+	}
+
+	public void update(OeuvreVente oeuvre) {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "Update oeuvrevente set etat_oeuvrevente ='" + oeuvre.getEtatOeuvreVente() + "' Where id_oeuvrevente = " + oeuvre.getIdOeuvreVente();
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			try {
+				throw e;
+			} catch (MonException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+
 	}
 		
 	

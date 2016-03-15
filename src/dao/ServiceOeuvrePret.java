@@ -54,4 +54,26 @@ public class ServiceOeuvrePret {
 	
 	
 	}
+
+
+	public void insertOeuvrePret(OeuvrePret uneOeuvrePret) {
+		String mysql;
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into oeuvrepret  (titre_oeuvrepret,id_proprietaire)  " + "values ('"
+					+ uneOeuvrePret.getTitreOeuvrePret() + "','"
+					+ String.valueOf(uneOeuvrePret.getProprietaire().getIdProprietaire()) + "')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			try {
+				throw e;
+			} catch (MonException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+
+		
+	}
 }

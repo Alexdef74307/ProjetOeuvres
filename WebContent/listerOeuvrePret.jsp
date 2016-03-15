@@ -17,9 +17,6 @@
 			<td>${item.titreOeuvrePret}</td>
             <td>${item.proprietaire.nomProprietaire} ${item.proprietaire.prenomProprietaire}</td>
             <td class="actions">
-            	<button type ="button" class = "btn-primary btn-xs">
-            		Modifier
-            	</button>
             	<a href="Controleur?action=supprimerOeuvrePret&idOeuvrePret=${item.idOeuvrePret}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Supprimer

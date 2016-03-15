@@ -19,9 +19,6 @@
 			<td>${item.date}</td>
             <td>${item.statut}</td>            
             <td class="actions">
-            	<button type ="button" class = "btn-primary btn-xs">
-            		Modifier
-            	</button>
             	<a href="Controleur?action=supprimerReservation&idAdherent=${item.adherent.idAdherent}&dateReservation=${item.date}&idOeuvreVente=${item.oeuvreVente.idOeuvreVente}" >
             		<button type ="button" class = "btn-danger btn-xs"> 
              			Supprimer

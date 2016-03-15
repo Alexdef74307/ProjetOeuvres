@@ -1,22 +1,17 @@
 <%@include file="include/header.jsp" %>
 
-<form  name='identification' method="post" action="Controleur?action=insererAdherent" onsubmit="return teste()">
+<form  name='identification' method="post" action="Controleur?action=insererProprietaire" onsubmit="return teste()">
 
-	<h2>Ajouter un adhérent</h2>
+	<h2>Ajouter un proprietaire</h2>
 
     <div class="form-group">   
-		<label for="InputLastName">Nom de l'adhérent :</label>
+		<label for="InputLastName">Nom du proprietaire :</label>
 	    <input type="text" required class="form-control" name="txtnom" value=""  id ="nom">
     </div>
     
 	<div class="form-group">
-		<label for="InputFirstName">Prénom de l'adhérent :</label>
+		<label for="InputFirstName">Prénom du proprietaire :</label>
         <input type="text" required class="form-control" name="txtprenom"  id ="prenom">
-    </div>
-    
-    <div class="form-group">
-    	<label for="InputCity">Ville de l'adhérent :</label>   
-        <INPUT type="text" required class="form-control" name="txtville" id ="ville">
     </div>
          
     <!-- Boutons Ajouter -->       
